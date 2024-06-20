@@ -3,7 +3,6 @@ import { css, styled } from "styled-components";
 export const HomeContainer = styled.div`
   ${() => css`
     flex: 1;
-
     display: flex;
     flex-direction: column;
     align-items: center;

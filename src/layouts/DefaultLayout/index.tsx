@@ -5,8 +5,10 @@ import * as S from "./styles";
 export function DefaultLayout() {
   return (
     <S.LayoutContainer>
-      <Header />
-      <Outlet />
+      <S.Container>
+        <Header />
+        <Outlet />
+      </S.Container>
     </S.LayoutContainer>
   );
 }

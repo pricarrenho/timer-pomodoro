@@ -4,10 +4,14 @@ import { StatusStyleType } from "./types";
 export const HistoryContainer = styled.div`
   ${() => css`
     flex: 1;
-    padding: 3.5rem;
+    padding: 0.5rem;
 
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 800px) {
+      padding: 3.5rem;
+    }
   `}
 `;
 
@@ -30,42 +34,67 @@ export const Table = styled.table`
   ${({ theme }) => css`
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px;
 
     th {
       background-color: ${theme.colors.gray[600]};
-      padding: 1em;
-      text-align: left;
+      text-align: center;
       color: ${theme.colors.gray[100]};
       font-size: ${theme.font.sizes.sm};
       line-height: 1.6;
+      padding: 4px;
 
       &:first-child {
         border-top-left-radius: ${theme.border.size};
-        padding-left: 1.5rem;
       }
 
       &:last-child {
         border-top-right-radius: ${theme.border.size};
-        padding-right: 1.5rem;
       }
     }
 
     td {
       background-color: ${theme.colors.gray[700]};
       border-top: 4px solid ${theme.colors.gray[800]};
+      padding: 4px;
 
-      padding: 1rem;
       font-size: ${theme.font.sizes.sm};
       line-height: 1.6;
 
       &:first-child {
         width: 50%;
-        padding-left: 1.5rem;
+      }
+    }
+
+    @media (min-width: 800px) {
+      min-width: 600px;
+
+      th {
+        text-align: left;
+        padding: 1em;
+        font-size: ${theme.font.sizes.sm};
+        line-height: 1.6;
+
+        &:first-child {
+          padding-left: 1.5rem;
+        }
+
+        &:last-child {
+          padding-right: 1.5rem;
+        }
       }
 
-      &:last-child {
-        padding-right: 1.5rem;
+      td {
+        padding: 1rem;
+        font-size: ${theme.font.sizes.sm};
+        line-height: 1.6;
+
+        &:first-child {
+          padding-left: 1.5rem;
+        }
+
+        &:last-child {
+          padding-right: 1.5rem;
+        }
       }
     }
   `}
